@@ -1,3 +1,16 @@
+/*
+
+when n = 5
+
+        1 
+      1 2 1 
+    1 2 3 2 1 
+  1 2 3 4 3 2 1 
+1 2 3 4 5 4 3 2 1 
+
+*/
+
+
 #include<iostream>
 using namespace std;
 int main() {
@@ -5,20 +18,17 @@ int main() {
     cout << "Enter the value of n: ";
     cin >> n;
     for(int row = 1; row <= n; row++) {
-        int lSpace = n - row;
-        for(int col = 1; col <= lSpace; col++){
+        int space = n - row;
+        for(int col = 1; col <= space; col++) {
             cout << "  ";
         }
-        int numeric = 2 * row - 1;
-        for(int col = row; col <= numeric; col++){
+
+        for(int col = 1; col <= row; col++){
             cout << col << " ";
         }
-        for(int col = 1; col <= row - 1; col++){
+        
+        for(int col = row - 1; col >= 1; col--){
             cout << col << " ";
-        }
-        int rSpace = (n - row) + 1;
-        for(int col = 1; col <= rSpace; col++){
-            cout << "  ";
         }
         cout << endl;
     }
